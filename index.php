@@ -11,9 +11,12 @@ $route = preg_replace('~[^a-zA-Z0-9_-]~', '', $route);
 
 // route → template eşlemesi
 $map = [
-    'home'     => ['template' => 'home',    'title' => 'Ana Sayfa'],
-    'moduller' => ['template' => 'modules', 'title' => 'Modüller'],
-    'iletisim' => ['template' => 'contact', 'title' => 'İletişim'],
+    'home'             => ['template' => 'home',             'title' => 'Ana Sayfa'],
+    'moduller'         => ['template' => 'modules',          'title' => 'Modüller'],
+    'iletisim'         => ['template' => 'contact',          'title' => 'İletişim'],
+    'login'            => ['template' => 'login',            'title' => 'Giriş Yap'],
+    'admin-dashboard'  => ['template' => 'admin-dashboard',  'title' => 'Yönetim Paneli'],
+    'client-dashboard' => ['template' => 'client-dashboard', 'title' => 'Müşteri Paneli'],
 ];
 
 // geçerli mi?
