@@ -1,0 +1,14 @@
+# turkuazit/.htaccess
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Eğer istenen şey gerçek bir dosya değilse...
+    RewriteCond %{REQUEST_FILENAME} !-f
+    # ...ve gerçek bir klasör değilse...
+    RewriteCond %{REQUEST_FILENAME} !-d
+
+    # Tüm istekleri index.php'ye yönlendir
+    # Örn: /moduller  -> index.php?route=moduller
+    RewriteRule ^(.*)$ index.php?route=$1 [QSA,L]
+</IfModule>
