@@ -18,13 +18,36 @@ $firmFromUser = $user['firm_name'] ?? '';
 ?>
 
 <main class="section section--tight">
-    <div class="container" style="max-width:900px;">
-        <span class="badge"><span class="badge__dot"></span>Hesap Bilgileri</span>
-        <h1 class="section__title" style="margin-top:.75rem;">Firma, adres ve kargo bilgileri</h1>
-        <p class="section__subtitle">Bu sayfadan firma ve teslimat adresinizi güncelleyebilirsiniz. Bilgiler doğruluk kontrolünden geçmelidir (saçma/uygunsuz veri kabul etmiyoruz).</p>
+    <div class="container">
+        <!--
+            profile.php
+            ----------
+            Kullanıcı profil (firma / adres / kargo) bilgileri — client panel çerçevesi kullanılarak yeniden düzenlendi.
+            Bu sayfa da sol menü ile birlikte .client-panel içinde görüntülenir, böylece tüm client sayfalarında görünüm tutarlı olur.
+        -->
 
-        <div class="card" style="margin-top:1.5rem;">
+        <div class="client-panel">
+            <div class="client-panel__header">
+                <div class="title-area">
+                    <span class="badge"><span class="badge__dot"></span> Hesap Bilgileri</span>
+                    <h1 class="section__title" style="margin-top:.5rem;">Firma, adres ve kargo bilgileri</h1>
+                    <p class="section__subtitle">Bu sayfadan firma ve teslimat adresinizi güncelleyebilirsiniz. Bilgiler doğruluk kontrolünden geçmelidir (saçma/uygunsuz veri kabul etmiyoruz).</p>
+                </div>
+
+                <div style="display:flex; gap:8px; align-items:center;">
+                    <a class="btn btn--ghost" href="<?php echo BASE_PATH; ?>/?route=client-dashboard">Geri</a>
+                </div>
+            </div>
+
+            <div class="client-panel__content">
+                <div class="client-panel__sidebar">
+                    <?php include __DIR__ . '/../partials/sidebar_client.php'; ?>
+                </div>
+
+                <div class="client-panel__main">
+                    <div class="card" style="margin-top:1.5rem;">
             <form method="post" action="<?php echo BASE_PATH; ?>/auth/profile_update.php" style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+                <input type="hidden" name="csrf" value="<?php echo csrf_token(); ?>">
                 <input type="hidden" name="user_id" value="<?php echo htmlspecialchars($userId); ?>">
 
                 <div style="grid-column:1 / span 2; display:flex; gap:8px;">
@@ -92,6 +115,9 @@ $firmFromUser = $user['firm_name'] ?? '';
                     <button type="submit" class="btn btn--ghost">Kaydet</button>
                 </div>
             </form>
-        </div>
-    </div>
+                    </div> <!-- .card -->
+                </div> <!-- .client-panel__main -->
+            </div> <!-- .client-panel__content -->
+        </div> <!-- .client-panel -->
+    </div> <!-- .container -->
 </main>

@@ -29,6 +29,7 @@ $registeredSuccess = isset($_GET['registered']) || (isset($_GET['success']) && $
             <?php endif; ?>
 
             <form method="post" action="<?php echo BASE_PATH; ?>/auth/login.php" style="display:flex; flex-direction:column; gap:.75rem;">
+                <input type="hidden" name="csrf" value="<?php echo csrf_token(); ?>">
                 <div>
                     <label style="font-size:.8rem; color:#9CA3AF;">E-posta</label>
                     <input

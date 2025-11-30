@@ -210,6 +210,64 @@ body {
     color: var(--color-text-soft);
 }
 
+/* -----------------------------
+   Client panel genel çerçevesi
+   - Müşteri dashboard ve alt sayfalar için ortak bir geniş çerçeve.
+   - Bu çerçeve içerisindeki içerik (sidebar + içerik) sabit genişlikte konteynırda kalır.
+   - Tüm client şablonları bu sınıfı kullanarak tutarlı bir görünüme sahip olur.
+   ----------------------------- */
+.client-panel {
+    background: linear-gradient(180deg, rgba(8,10,18,0.6), rgba(8,10,18,0.55));
+    border-radius: var(--radius-lg);
+    padding: 28px;
+    border: 1px solid rgba(255,255,255,0.04);
+    box-shadow: 0 18px 60px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
+}
+
+.client-panel__header {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    margin-bottom: 16px;
+}
+
+.client-panel__header .title-area {
+    display:flex;
+    flex-direction:column;
+}
+
+.client-panel__content {
+    display:flex;
+    gap:16px;
+    align-items:flex-start;
+}
+
+.client-panel__sidebar {
+    width:240px;
+    flex: 0 0 240px;
+}
+
+.client-panel__main {
+    flex: 1 1 auto;
+}
+
+/* İçerdeki küçük kartlar (özet kutuları) için standart boyut */
+.client-stat {
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    background: linear-gradient(180deg, rgba(15,23,42,0.9), rgba(15,23,42,0.86));
+    border-radius: 12px;
+    padding: 18px;
+    border: 1px solid rgba(148,163,184,0.06);
+}
+
+@media (max-width: 900px) {
+    .client-panel__content { flex-direction:column; }
+    .client-panel__sidebar { width:100%; flex: 0 0 auto; }
+}
+
 /* Badges / Pills */
 
 .badge {

@@ -45,3 +45,16 @@ SELECT COUNT(*) FROM INFORMATION_SCHEMA.COLUMNS
 
 Eğer bu dosyayı çalıştıktan sonra da hata alırsanız `logs/register_errors.log` dosyasını kontrol edin — register handler server hatalarını buraya yazacak şekilde güncellendi.
 
+Yeni migration'lar (admin envanter ve kullanıcı-firma ilişkilendirmesi):
+- db/migrations/20251201_create_firmalar_and_user_fk.sql — `firmalar` tablosu oluşturulur ve `users.firma_id` alanı eklenir. Canlıda uygulamadan önce yedek alın ve staging ortamında test edin.
+
+Admin envanter CRUD (lokasyonlar/firmalar/katmanların çalışması için):
+- templates/admin_envanter_ekle.php
+- templates/admin_envanter_liste.php
+- templates/admin_envanter_edit.php
+- admin/envanter_save.php
+- admin/envanter_update.php
+- admin/envanter_delete.php
+
+Uploads: envanter dosyaları `uploads/envanter/{envanter_id}/` altına kaydedilir. Üretimde dosya izinleri ve boyut sınırlarını sunucu config ile kontrol edin.
+

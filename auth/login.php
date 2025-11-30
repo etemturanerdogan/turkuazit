@@ -7,6 +7,19 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
+// Rate limiting (session-based) — büyük üretim sistemleri için redis veya iptables tercih edin
+if (!rate_limit_check('login_' . ($_SERVER['REMOTE_ADDR'] ?? 'ip'), 10, 300)) {
+    header('Location: ' . BASE_PATH . '/?route=login&error=1');
+    exit;
+}
+
+// CSRF kontrolü
+$csrf = $_POST['csrf'] ?? '';
+if (!csrf_check($csrf)) {
+    header('Location: ' . BASE_PATH . '/?route=login&error=1');
+    exit;
+}
+
 // İngilizce değişken adları kullanıyoruz: email, password
 $email    = filter_var(trim($_POST['email'] ?? ''), FILTER_VALIDATE_EMAIL) ?: '';
 $password = $_POST['password'] ?? '';
@@ -37,6 +50,9 @@ $_SESSION['user'] = [
     'role'       => $user['role'] ?? 'client',
     'firm_name'  => $user['firm_name'] ?? null,
 ];
+
+// Oturum sabitleme saldırılarına karşı session id yenile
+session_regenerate_id(true);
 
 // Eğer user_profiles tablosunda company_name varsa, session içindeki firm_name'i ona göre güncelle
 $stmt = $pdo->prepare('SELECT company_name FROM user_profiles WHERE user_id = :uid LIMIT 1');

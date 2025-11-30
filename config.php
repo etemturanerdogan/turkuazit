@@ -3,10 +3,22 @@
 // Sunucuya atınca bunu '' yapacaksın (örn: turkuazit.com'un köküne atarsan)
 define('BASE_PATH', '/turkuazit'); // canlıda köke atarsan '' yaparsın
 
-// Session
+// Session (hardening): cookie flags, SameSite, httponly
 if (session_status() === PHP_SESSION_NONE) {
+    $secure = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off');
+    session_set_cookie_params([
+        'lifetime' => 0,
+        'path' => '/',
+        'domain' => '',
+        'secure' => $secure,
+        'httponly' => true,
+        'samesite' => 'Lax'
+    ]);
     session_start();
 }
+
+// Ortak yardımcı fonksiyonları yükle
+require_once __DIR__ . '/functions.php';
 
 // DB bağlantısı (kendi bilgine göre düzenle)
 try {

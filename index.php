@@ -17,7 +17,15 @@ $map = [
     'login'            => ['template' => 'page-login',            'title' => 'Giriş Yap'],
     'register'         => ['template' => 'page-register',         'title' => 'Kayıt Ol'],
     'admin-dashboard'  => ['template' => 'admin-dashboard',  'title' => 'Yönetim Paneli'],
+    'admin-envanter-ekle' => ['template' => 'admin_envanter_ekle', 'title' => 'Envanter Ekle'],
+    'admin-envanter-liste' => ['template' => 'admin_envanter_liste', 'title' => 'Envanter Listesi'],
+    'admin-envanter-edit' => ['template' => 'admin_envanter_edit', 'title' => 'Envanter Düzenle'],
+    'admin-users' => ['template' => 'admin_users', 'title' => 'Kullanıcılar'],
+    'admin-user-edit' => ['template' => 'admin_user_edit', 'title' => 'Kullanıcı Düzenle'],
     'client-dashboard' => ['template' => 'client-dashboard', 'title' => 'Müşteri Paneli'],
+    // Client panel alt sayfaları
+    'client-envanter'  => ['template' => 'client_envanter_liste', 'title' => 'Envanterim'],
+    'client-zimmet'    => ['template' => 'client_zimmet_liste',  'title' => 'Zimmetlerim'],
     'profile'          => ['template' => 'profile',          'title' => 'Hesap / Firma Bilgileri'],
 ];
 

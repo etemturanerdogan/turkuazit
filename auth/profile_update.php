@@ -8,6 +8,13 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
+// CSRF kontrolü
+$csrf = $_POST['csrf'] ?? '';
+if (!csrf_check($csrf)) {
+    header('Location: ' . BASE_PATH . '/?route=profile&error=' . urlencode('Sunucu doğrulama hatası.'));
+    exit;
+}
+
 require_login();
 $user = current_user();
 $userId = (int)($_POST['user_id'] ?? 0);

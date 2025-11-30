@@ -37,6 +37,9 @@ if (!isset($pageTitle)) {
                 <?php if (is_logged_in()): ?>
                 <a href="<?php echo BASE_PATH; ?>/?route=profile" class="btn btn--ghost" style="margin-right:.25rem;">Hesabım</a>
                 <span style="font-size:0.8rem; color:#9CA3AF;">
+                <a href="<?php echo BASE_PATH; ?>/?route=client-dashboard" class="btn btn--ghost" style="margin-right:.25rem;">Müşteri Paneli</a>
+                <span style="font-size:0.8rem; color:#9CA3AF;">
+
                     <?php echo htmlspecialchars(current_user()['full_name']); ?>
                     <?php if (is_admin()) echo ' · Admin'; ?>
                 </span>

@@ -20,6 +20,19 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
+// Basit rate-limit — aynı ip'den kısa zamanda çok kayıt gelmesini engelle
+if (!rate_limit_check('register_' . ($_SERVER['REMOTE_ADDR'] ?? 'ip'), 5, 3600)) {
+    header('Location: ' . BASE_PATH . '/?route=register&error=' . urlencode('Çok fazla kayıt denemesi, lütfen daha sonra tekrar deneyin.'));
+    exit;
+}
+
+// CSRF kontrolü
+$csrf = $_POST['csrf'] ?? '';
+if (!csrf_check($csrf)) {
+    header('Location: ' . BASE_PATH . '/?route=register&error=' . urlencode('Sunucu doğrulama hatası (CSRF).'));
+    exit;
+}
+
 // Girdi okuma ve basit doğrulama (sanity checks)
 $firstName = trim($_POST['first_name'] ?? '');
 $lastName  = trim($_POST['last_name'] ?? '');
