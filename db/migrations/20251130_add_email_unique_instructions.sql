@@ -1,0 +1,11 @@
+-- Migration: 2025-11-30 — E-posta UNIQUE constraint ekleme talimatı
+-- DİKKAT: Bu migration doğrudan çalıştırılmamalı. Önce veritabanınızda duplicate (aynı email) kayıtlar olup olmadığı kontrol edilmeli.
+-- Önerilen akış:
+-- 1) Duplicate kayıtları tespit edin:
+--    SELECT email, COUNT(*) as cnt FROM users GROUP BY email HAVING cnt > 1;
+-- 2) Eğer duplicate varsa, bunları elle temizleyin veya birleştirin.
+-- 3) Duplicate yoksa UNIQUE constraint ekleyin:
+--    ALTER TABLE users ADD CONSTRAINT uniq_users_email UNIQUE (email);
+
+-- Alternatif olarak, yeni kayıtların e-posta kontrolünü uygulayan uygulama mantığı yeterliyse,
+-- UNIQ constraint'ı staging/test ortamında önce doğrulamanız önerilir.

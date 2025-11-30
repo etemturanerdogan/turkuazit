@@ -31,7 +31,17 @@ try {
 // AUTH yardımcıları
 function current_user()
 {
-    return $_SESSION['user'] ?? null;
+    // Oturumda saklanan kullanıcı objesini döndürür.
+    // Eğer panele dışarıdan erişildiğinde bazı eski kodlar hala 'full_name' bekliyorsa,
+    // burada first_name/last_name varsa full_name üretilir.
+    $u = $_SESSION['user'] ?? null;
+    if ($u) {
+        // Eğer session'da sadece old format full_name varsa onu koruruz.
+        if (empty($u['full_name']) && (!empty($u['first_name']) || !empty($u['last_name']))) {
+            $u['full_name'] = trim(($u['first_name'] ?? '') . ' ' . ($u['last_name'] ?? ''));
+        }
+    }
+    return $u;
 }
 
 function is_logged_in(): bool

@@ -11,6 +11,7 @@ require_login(); // admin de girer, client de
 
         <div style="margin-top:1.5rem;" class="card">
             <div class="card__title">
+                <!-- current_user() artık first_name / last_name ile uyumlu çalışır. full_name otomatik oluşturulur -->
                 Merhaba, <?php echo htmlspecialchars(current_user()['full_name']); ?>
             </div>
             <div class="card__subtitle">
@@ -19,6 +20,11 @@ require_login(); // admin de girer, client de
                 <?php else: ?>
                     Firma bilgisi daha sonra eklenecektir.
                 <?php endif; ?>
+            </div>
+
+            <div style="margin-top:1rem; display:flex; gap:.5rem;">
+                <!-- Profil sayfasına hızlı geçiş için buton -->
+                <a class="btn btn--ghost" href="<?php echo BASE_PATH; ?>/?route=profile">Firma / Adres Bilgileri</a>
             </div>
         </div>
     </div>

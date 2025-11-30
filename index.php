@@ -14,9 +14,11 @@ $map = [
     'home'             => ['template' => 'home',             'title' => 'Ana Sayfa'],
     'moduller'         => ['template' => 'modules',          'title' => 'Modüller'],
     'iletisim'         => ['template' => 'contact',          'title' => 'İletişim'],
-    'login'            => ['template' => 'login',            'title' => 'Giriş Yap'],
+    'login'            => ['template' => 'page-login',            'title' => 'Giriş Yap'],
+    'register'         => ['template' => 'page-register',         'title' => 'Kayıt Ol'],
     'admin-dashboard'  => ['template' => 'admin-dashboard',  'title' => 'Yönetim Paneli'],
     'client-dashboard' => ['template' => 'client-dashboard', 'title' => 'Müşteri Paneli'],
+    'profile'          => ['template' => 'profile',          'title' => 'Hesap / Firma Bilgileri'],
 ];
 
 // geçerli mi?

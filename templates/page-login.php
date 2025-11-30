@@ -1,6 +1,7 @@
 <?php
 // templates/login.php
 $loginError = isset($_GET['error']) && $_GET['error'] === '1';
+$registeredSuccess = isset($_GET['registered']) || (isset($_GET['success']) && $_GET['success'] === '1');
 ?>
 
 <main class="section section--tight">
@@ -17,6 +18,10 @@ $loginError = isset($_GET['error']) && $_GET['error'] === '1';
         </p>
 
         <div class="card" style="margin-top:1.5rem;">
+            <?php if ($registeredSuccess): ?>
+                <div style="margin-bottom:.75rem; font-size:.9rem; color:#86efac;">Kayıt başarılı — lütfen giriş yapınız.</div>
+            <?php endif; ?>
+
             <?php if ($loginError): ?>
                 <div style="margin-bottom:.75rem; font-size:.8rem; color:#FCA5A5;">
                     E-posta veya şifre hatalı, ya da hesabınız pasif.

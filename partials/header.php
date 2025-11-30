@@ -34,14 +34,17 @@ if (!isset($pageTitle)) {
         </nav>
 
         <div style="display:flex; gap:0.5rem; align-items:center;">
-            <?php if (is_logged_in()): ?>
+                <?php if (is_logged_in()): ?>
+                <a href="<?php echo BASE_PATH; ?>/?route=profile" class="btn btn--ghost" style="margin-right:.25rem;">Hesabım</a>
                 <span style="font-size:0.8rem; color:#9CA3AF;">
                     <?php echo htmlspecialchars(current_user()['full_name']); ?>
                     <?php if (is_admin()) echo ' · Admin'; ?>
                 </span>
                 <a href="<?php echo BASE_PATH; ?>/auth/logout.php" class="btn btn--ghost">Çıkış</a>
-            <?php else: ?>
+                <?php else: ?>
                 <a href="<?php echo BASE_PATH; ?>/?route=login" class="btn btn--ghost">Giriş Yap</a>
+                <!-- Yeni: ayrı kayıt sayfası -->
+                <a href="<?php echo BASE_PATH; ?>/?route=register" class="btn btn--ghost">Kayıt Ol</a>
                 <a href="<?php echo BASE_PATH; ?>/?route=iletisim" class="btn btn--primary">Teklif Al</a>
             <?php endif; ?>
         </div>
