@@ -1,6 +1,6 @@
 <?php
-// admin/envanter_delete.php
-require_once __DIR__ . '/../config.php';
+// admin/admin_inventory_delete_action.php
+require_once __DIR__ . '/../app_config.php';
 require_admin();
 
 $id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
@@ -30,7 +30,7 @@ try {
     redirect(BASE_PATH . '/?route=admin-envanter-liste');
 
 } catch (PDOException $e) {
-    @file_put_contents(__DIR__ . '/../logs/admin_envanter_errors.log', date('Y-m-d H:i:s') . ' - ' . $e->getMessage() . PHP_EOL, FILE_APPEND);
+    @file_put_contents(__DIR__ . '/../logs/admin_inventory_errors.log', date('Y-m-d H:i:s') . ' - ' . $e->getMessage() . PHP_EOL, FILE_APPEND);
     set_flash('error', 'Silme sırasında hata oluştu.');
     redirect(BASE_PATH . '/?route=admin-envanter-liste');
 }

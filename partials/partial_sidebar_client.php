@@ -1,7 +1,7 @@
 <?php
 // partials/sidebar_client.php
 // Müşteri paneli için sol menü (kendi envanteri, zimmetler, profil, talepler...)
-require_once __DIR__ . '/../config.php';
+require_once __DIR__ . '/../app_config.php';
 ?>
 
 <aside class="sidebar" style="width:240px; padding:16px; background:rgba(10,14,20,0.45); border-radius:8px;">

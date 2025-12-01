@@ -1,7 +1,7 @@
 <?php
-// auth/profile_update.php
+// auth/auth_profile_update_action.php
 // Kullanıcı kendi profil / firma / adres bilgilerini güncelleme handler'ı
-require_once __DIR__ . '/../config.php';
+require_once __DIR__ . '/../app_config.php';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     header('Location: ' . BASE_PATH . '/?route=profile');

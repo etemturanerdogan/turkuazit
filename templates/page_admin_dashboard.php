@@ -1,7 +1,7 @@
 <?php
-// templates/admin-dashboard.php
+// templates/page_admin_dashboard.php
 // Yönetim paneli ana sayfası — kısa özet ve kısayollar
-require_once __DIR__ . '/../config.php';
+require_once __DIR__ . '/../app_config.php';
 require_admin();
 
 // Özet sayısı (defansif sorgular)
@@ -18,7 +18,7 @@ try {
 <main class="section">
     <div class="container">
         <div style="display:flex; gap:16px;">
-            <?php include __DIR__ . '/../partials/sidebar_admin.php'; ?>
+            <?php include __DIR__ . '/../partials/partial_sidebar_admin.php'; ?>
 
             <div style="flex:1;">
                 <h1 class="section__title">Yönetim Paneli</h1>

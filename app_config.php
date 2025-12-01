@@ -18,7 +18,7 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 
 // Ortak yardımcı fonksiyonları yükle
-require_once __DIR__ . '/functions.php';
+require_once __DIR__ . '/app_functions.php';
 
 // DB bağlantısı (kendi bilgine göre düzenle)
 try {

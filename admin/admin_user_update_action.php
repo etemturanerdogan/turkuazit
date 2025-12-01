@@ -1,6 +1,6 @@
 <?php
-// admin/user_update.php
-require_once __DIR__ . '/../config.php';
+// admin/admin_user_update_action.php
+require_once __DIR__ . '/../app_config.php';
 require_admin();
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') redirect(BASE_PATH . '/?route=admin-users');

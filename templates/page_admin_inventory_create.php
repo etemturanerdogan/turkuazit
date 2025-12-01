@@ -1,6 +1,6 @@
 <?php
-// templates/admin_envanter_ekle.php
-require_once __DIR__ . '/../config.php';
+// templates/page_admin_inventory_create.php
+require_once __DIR__ . '/../app_config.php';
 require_admin();
 
 $firms = [];
@@ -17,7 +17,7 @@ try {
 <main class="section">
     <div class="container">
         <div style="display:flex; gap:16px;">
-            <?php include __DIR__ . '/../partials/sidebar_admin.php'; ?>
+            <?php include __DIR__ . '/../partials/partial_sidebar_admin.php'; ?>
 
             <div style="flex:1;">
                 <h1 class="section__title">Yeni Envanter Ekle</h1>
@@ -27,7 +27,7 @@ try {
                     <div class="card">
                         <?php echo render_messages(); ?>
 
-                        <form method="post" action="<?php echo BASE_PATH; ?>/admin/envanter_save.php" enctype="multipart/form-data">
+                        <form method="post" action="<?php echo BASE_PATH; ?>/admin/admin_inventory_create_action.php" enctype="multipart/form-data">
                             <input type="hidden" name="csrf" value="<?php echo csrf_token(); ?>">
 
                             <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">

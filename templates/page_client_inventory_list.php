@@ -1,7 +1,7 @@
 <?php
-// templates/client_envanter_liste.php
+// templates/page_client_inventory_list.php
 // Müşterinin kendi envanter listesini gösterir.
-require_once __DIR__ . '/../config.php';
+require_once __DIR__ . '/../app_config.php';
 require_login();
 
 $user = current_user();
@@ -35,7 +35,7 @@ try {
 <main class="section">
     <div class="container">
         <!--
-            client_envanter_liste.php
+            page_client_inventory_list.php
             -------------------------
             Tüm client sayfalarında kullanılan geniş çerçeve (.client-panel) uygulandı.
             Sidebar ve içerik aynı panel içinde düzenlenir — bu sayede görünüm projede tutarlı olur.
@@ -57,7 +57,7 @@ try {
 
             <div class="client-panel__content">
                 <div class="client-panel__sidebar">
-                    <?php include __DIR__ . '/../partials/sidebar_client.php'; ?>
+                    <?php include __DIR__ . '/../partials/partial_sidebar_client.php'; ?>
                 </div>
 
                 <div class="client-panel__main">

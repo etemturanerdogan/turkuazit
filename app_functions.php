@@ -1,6 +1,6 @@
 <?php
-// functions.php — Proje genel yardımcı fonksiyonları
-// NOT: Bu dosya `config.php` ile aynı dizinde kullanılır. Burada CSRF, flash mesajlar, redirect, basit rate-limit helper vb bulunur.
+// app_functions.php — Proje genel yardımcı fonksiyonları
+// NOT: Bu dosya `app_config.php` ile aynı dizinde kullanılır. Burada CSRF, flash mesajlar, redirect, basit rate-limit helper vb bulunur.
 
 if (session_status() === PHP_SESSION_NONE) {
 	session_start();

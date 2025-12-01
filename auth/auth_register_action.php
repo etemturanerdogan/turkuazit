@@ -1,9 +1,9 @@
 <?php
-// auth/register.php
+// auth/auth_register_action.php
 // Yeni kullanıcı kayıt işlemini gerçekleştirir.
 // Önemli: Giriş/kayıt sayfalarında değişken adları İngilizce (first_name, last_name, email, password)
 
-require_once __DIR__ . '/../config.php';
+require_once __DIR__ . '/../app_config.php';
 
 // Basit log fonksiyonu — üretimde daha ileri bir log sistemi tercih edilmelidir.
 function _log_register_error($msg)

@@ -1,6 +1,6 @@
 <?php
-// templates/admin_envanter_liste.php
-require_once __DIR__ . '/../config.php';
+// templates/page_admin_inventory_list.php
+require_once __DIR__ . '/../app_config.php';
 require_admin();
 
 $items = [];
@@ -16,7 +16,7 @@ try {
 <main class="section">
     <div class="container">
         <div style="display:flex; gap:16px;">
-            <?php include __DIR__ . '/../partials/sidebar_admin.php'; ?>
+            <?php include __DIR__ . '/../partials/partial_sidebar_admin.php'; ?>
 
             <div style="flex:1;">
                 <h1 class="section__title">Envanter Listesi</h1>
@@ -59,7 +59,7 @@ try {
                                         <td><?php echo htmlspecialchars($it['demirbas_kodu'] ?? '—'); ?></td>
                                         <td>
                                             <a class="btn btn--ghost" href="<?php echo BASE_PATH; ?>/?route=admin-envanter-edit&id=<?php echo $it['id']; ?>">Düzenle</a>
-                                            <a class="btn btn--ghost" href="<?php echo BASE_PATH; ?>/admin/envanter_delete.php?id=<?php echo $it['id']; ?>&csrf=<?php echo csrf_token(); ?>" onclick="return confirm('Bu envanteri silmek istediğinizden emin misiniz?');">Sil</a>
+                                            <a class="btn btn--ghost" href="<?php echo BASE_PATH; ?>/admin/admin_inventory_delete_action.php?id=<?php echo $it['id']; ?>&csrf=<?php echo csrf_token(); ?>" onclick="return confirm('Bu envanteri silmek istediğinizden emin misiniz?');">Sil</a>
                                         </td>
                                     </tr>
                                 <?php endforeach; ?>

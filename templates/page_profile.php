@@ -1,7 +1,7 @@
 <?php
-// templates/profile.php
+// templates/page_profile.php
 // Kullanıcı kendi firma / adres / kargo bilgilerini burada görüntüler ve günceller.
-require_once __DIR__ . '/../config.php';
+require_once __DIR__ . '/../app_config.php';
 require_login();
 
 $user = current_user();
@@ -41,12 +41,12 @@ $firmFromUser = $user['firm_name'] ?? '';
 
             <div class="client-panel__content">
                 <div class="client-panel__sidebar">
-                    <?php include __DIR__ . '/../partials/sidebar_client.php'; ?>
+                    <?php include __DIR__ . '/../partials/partial_sidebar_client.php'; ?>
                 </div>
 
                 <div class="client-panel__main">
                     <div class="card" style="margin-top:1.5rem;">
-            <form method="post" action="<?php echo BASE_PATH; ?>/auth/profile_update.php" style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+            <form method="post" action="<?php echo BASE_PATH; ?>/auth/auth_profile_update_action.php" style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
                 <input type="hidden" name="csrf" value="<?php echo csrf_token(); ?>">
                 <input type="hidden" name="user_id" value="<?php echo htmlspecialchars($userId); ?>">
 

@@ -1,6 +1,6 @@
 <?php
 // partials/sidebar_admin.php — Yönetim paneli sol menüsü
-require_once __DIR__ . '/../config.php';
+require_once __DIR__ . '/../app_config.php';
 require_admin(); // Bu menü sadece admin için görünür
 ?>
 

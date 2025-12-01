@@ -1,5 +1,5 @@
 <?php
-// templates/login.php
+// templates/page_auth_login.php
 $loginError = isset($_GET['error']) && $_GET['error'] === '1';
 $registeredSuccess = isset($_GET['registered']) || (isset($_GET['success']) && $_GET['success'] === '1');
 ?>
@@ -28,7 +28,7 @@ $registeredSuccess = isset($_GET['registered']) || (isset($_GET['success']) && $
                 </div>
             <?php endif; ?>
 
-            <form method="post" action="<?php echo BASE_PATH; ?>/auth/login.php" style="display:flex; flex-direction:column; gap:.75rem;">
+            <form method="post" action="<?php echo BASE_PATH; ?>/auth/auth_login_action.php" style="display:flex; flex-direction:column; gap:.75rem;">
                 <input type="hidden" name="csrf" value="<?php echo csrf_token(); ?>">
                 <div>
                     <label style="font-size:.8rem; color:#9CA3AF;">E-posta</label>

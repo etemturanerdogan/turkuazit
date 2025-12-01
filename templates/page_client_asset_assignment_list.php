@@ -1,7 +1,7 @@
 <?php
-// templates/client_zimmet_liste.php
+// templates/page_client_asset_assignment_list.php
 // Oturum açmış kullanıcının üzerinde kayıtlı zimmetleri (eğer varsa) listeler.
-require_once __DIR__ . '/../config.php';
+require_once __DIR__ . '/../app_config.php';
 require_login();
 
 $user = current_user();
@@ -42,7 +42,7 @@ try {
 <main class="section">
     <div class="container">
         <!--
-            client_zimmet_liste.php
+            page_client_asset_assignment_list.php
             ------------------------
             Client panel çerçevesi içinde sidebar ve içerik düzeni kullanıldı. Sayfa eksik tablolara karşı defansif.
         -->
@@ -63,7 +63,7 @@ try {
 
             <div class="client-panel__content">
                 <div class="client-panel__sidebar">
-                    <?php include __DIR__ . '/../partials/sidebar_client.php'; ?>
+                    <?php include __DIR__ . '/../partials/partial_sidebar_client.php'; ?>
                 </div>
 
                 <div class="client-panel__main">

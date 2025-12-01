@@ -28,7 +28,7 @@ require_login(); // admin de girer, client de
 
             <div class="client-panel__content">
                 <div class="client-panel__sidebar">
-                    <?php include __DIR__ . '/../partials/sidebar_client.php'; ?>
+                    <?php include __DIR__ . '/../partials/partial_sidebar_client.php'; ?>
                 </div>
 
                 <div class="client-panel__main">

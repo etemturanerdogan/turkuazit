@@ -11,22 +11,22 @@ $route = preg_replace('~[^a-zA-Z0-9_-]~', '', $route);
 
 // route → template eşlemesi
 $map = [
-    'home'             => ['template' => 'home',             'title' => 'Ana Sayfa'],
-    'moduller'         => ['template' => 'modules',          'title' => 'Modüller'],
-    'iletisim'         => ['template' => 'contact',          'title' => 'İletişim'],
-    'login'            => ['template' => 'page-login',            'title' => 'Giriş Yap'],
-    'register'         => ['template' => 'page-register',         'title' => 'Kayıt Ol'],
-    'admin-dashboard'  => ['template' => 'admin-dashboard',  'title' => 'Yönetim Paneli'],
-    'admin-envanter-ekle' => ['template' => 'admin_envanter_ekle', 'title' => 'Envanter Ekle'],
-    'admin-envanter-liste' => ['template' => 'admin_envanter_liste', 'title' => 'Envanter Listesi'],
-    'admin-envanter-edit' => ['template' => 'admin_envanter_edit', 'title' => 'Envanter Düzenle'],
-    'admin-users' => ['template' => 'admin_users', 'title' => 'Kullanıcılar'],
-    'admin-user-edit' => ['template' => 'admin_user_edit', 'title' => 'Kullanıcı Düzenle'],
-    'client-dashboard' => ['template' => 'client-dashboard', 'title' => 'Müşteri Paneli'],
+    'home'             => ['template' => 'page_public_home',             'title' => 'Ana Sayfa'],
+    'moduller'         => ['template' => 'page_modules',          'title' => 'Modüller'],
+    'iletisim'         => ['template' => 'page_contact',          'title' => 'İletişim'],
+    'login'            => ['template' => 'page_auth_login',            'title' => 'Giriş Yap'],
+    'register'         => ['template' => 'page_auth_register',         'title' => 'Kayıt Ol'],
+    'admin-dashboard'  => ['template' => 'page_admin_dashboard',  'title' => 'Yönetim Paneli'],
+    'admin-envanter-ekle' => ['template' => 'page_admin_inventory_create', 'title' => 'Envanter Ekle'],
+    'admin-envanter-liste' => ['template' => 'page_admin_inventory_list', 'title' => 'Envanter Listesi'],
+    'admin-envanter-edit' => ['template' => 'page_admin_inventory_edit', 'title' => 'Envanter Düzenle'],
+    'admin-users' => ['template' => 'page_admin_user_list', 'title' => 'Kullanıcılar'],
+    'admin-user-edit' => ['template' => 'page_admin_user_edit', 'title' => 'Kullanıcı Düzenle'],
+    'client-dashboard' => ['template' => 'page_client_dashboard', 'title' => 'Müşteri Paneli'],
     // Client panel alt sayfaları
-    'client-envanter'  => ['template' => 'client_envanter_liste', 'title' => 'Envanterim'],
-    'client-zimmet'    => ['template' => 'client_zimmet_liste',  'title' => 'Zimmetlerim'],
-    'profile'          => ['template' => 'profile',          'title' => 'Hesap / Firma Bilgileri'],
+    'client-envanter'  => ['template' => 'page_client_inventory_list', 'title' => 'Envanterim'],
+    'client-zimmet'    => ['template' => 'page_client_asset_assignment_list',  'title' => 'Zimmetlerim'],
+    'profile'          => ['template' => 'page_profile',          'title' => 'Hesap / Firma Bilgileri'],
 ];
 
 // geçerli mi?
@@ -39,7 +39,7 @@ if (isset($map[$route])) {
 }
 
 // ÜST BAR
-require __DIR__ . '/partials/header.php';
+require __DIR__ . '/partials/partial_header.php';
 
 // İÇERİK
 if ($view !== null) {
@@ -56,4 +56,4 @@ if ($view !== null) {
 }
 
 // ALT BAR
-require __DIR__ . '/partials/footer.php';
+require __DIR__ . '/partials/partial_footer.php';

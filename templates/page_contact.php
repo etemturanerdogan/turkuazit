@@ -1,5 +1,5 @@
 <?php
-// templates/contact.php
+// templates/page_contact.php
 ?>
 
 <main class="section section--tight">

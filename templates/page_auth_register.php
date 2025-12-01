@@ -1,5 +1,5 @@
 <?php
-// templates/register.php
+// templates/page_auth_register.php
 // Kayıt formu: form alanları İngilizce değişken adları kullanır (first_name, last_name, email, password)
 
 $registerError = isset($_GET['error']) ? $_GET['error'] : null;
@@ -29,7 +29,7 @@ $success = isset($_GET['success']) && $_GET['success'] === '1';
                 </div>
             <?php endif; ?>
 
-            <form method="post" action="<?php echo BASE_PATH; ?>/auth/register.php" style="display:flex; flex-direction:column; gap:.75rem;">
+            <form method="post" action="<?php echo BASE_PATH; ?>/auth/auth_register_action.php" style="display:flex; flex-direction:column; gap:.75rem;">
                 <input type="hidden" name="csrf" value="<?php echo csrf_token(); ?>">
                 <div style="display:flex; gap:.5rem;">
                     <div style="flex:1;">

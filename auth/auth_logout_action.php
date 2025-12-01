@@ -1,6 +1,6 @@
 <?php
-// auth/logout.php
-require_once __DIR__ . '/../config.php';
+// auth/auth_logout_action.php
+require_once __DIR__ . '/../app_config.php';
 
 $_SESSION = [];
 session_destroy();

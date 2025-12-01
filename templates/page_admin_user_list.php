@@ -1,6 +1,6 @@
 <?php
-// templates/admin_users.php
-require_once __DIR__ . '/../config.php';
+// templates/page_admin_user_list.php
+require_once __DIR__ . '/../app_config.php';
 require_admin();
 
 $users = [];
@@ -15,7 +15,7 @@ try {
 <main class="section">
     <div class="container">
         <div style="display:flex; gap:16px;">
-            <?php include __DIR__ . '/../partials/sidebar_admin.php'; ?>
+            <?php include __DIR__ . '/../partials/partial_sidebar_admin.php'; ?>
 
             <div style="flex:1;">
                 <h1 class="section__title">Kullanıcılar ve Roller</h1>

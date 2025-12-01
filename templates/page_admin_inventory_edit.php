@@ -1,6 +1,6 @@
 <?php
-// templates/admin_envanter_edit.php
-require_once __DIR__ . '/../config.php';
+// templates/page_admin_inventory_edit.php
+require_once __DIR__ . '/../app_config.php';
 require_admin();
 
 $id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
@@ -38,7 +38,7 @@ try {
 <main class="section">
     <div class="container">
         <div style="display:flex; gap:16px;">
-            <?php include __DIR__ . '/../partials/sidebar_admin.php'; ?>
+            <?php include __DIR__ . '/../partials/partial_sidebar_admin.php'; ?>
 
             <div style="flex:1;">
                 <h1 class="section__title">Envanter Düzenle — ID #<?php echo htmlspecialchars($id); ?></h1>
@@ -48,7 +48,7 @@ try {
                     <div class="card">
                         <?php echo render_messages(); ?>
 
-                        <form method="post" action="<?php echo BASE_PATH; ?>/admin/envanter_update.php" enctype="multipart/form-data">
+                        <form method="post" action="<?php echo BASE_PATH; ?>/admin/admin_inventory_update_action.php" enctype="multipart/form-data">
                             <input type="hidden" name="csrf" value="<?php echo csrf_token(); ?>">
                             <input type="hidden" name="id" value="<?php echo $id; ?>">
 

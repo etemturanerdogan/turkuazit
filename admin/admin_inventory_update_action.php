@@ -1,6 +1,6 @@
 <?php
-// admin/envanter_update.php
-require_once __DIR__ . '/../config.php';
+// admin/admin_inventory_update_action.php
+require_once __DIR__ . '/../app_config.php';
 require_admin();
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') redirect(BASE_PATH . '/?route=admin-envanter-liste');
@@ -64,7 +64,7 @@ try {
     redirect(BASE_PATH . '/?route=admin-envanter-edit&id=' . $id);
 
 } catch (PDOException $e) {
-    @file_put_contents(__DIR__ . '/../logs/admin_envanter_errors.log', date('Y-m-d H:i:s') . ' - ' . $e->getMessage() . PHP_EOL, FILE_APPEND);
+    @file_put_contents(__DIR__ . '/../logs/admin_inventory_errors.log', date('Y-m-d H:i:s') . ' - ' . $e->getMessage() . PHP_EOL, FILE_APPEND);
     set_flash('error', 'Envanter güncelleme sırasında hata oluştu.');
     redirect(BASE_PATH . '/?route=admin-envanter-edit&id=' . $id);
 }

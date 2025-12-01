@@ -1,6 +1,6 @@
 <?php
-// auth/login.php
-require_once __DIR__ . '/../config.php';
+// auth/auth_login_action.php
+require_once __DIR__ . '/../app_config.php';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     header('Location: ' . BASE_PATH . '/?route=login');

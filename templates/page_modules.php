@@ -1,5 +1,5 @@
 <?php
-// templates/modules.php
+// templates/page_modules.php
 ?>
 
 <main class="section">
